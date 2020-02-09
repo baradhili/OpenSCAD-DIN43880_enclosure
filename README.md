@@ -3,9 +3,10 @@
 This was forked from e3DHW-make-DIY-electronics-hardware-like-a-professional and re-arranged (a lot)
 to make it work better with git and to focus it on the generation of DIN43880 enclosures
 
-still work in progress and teh TODO list is longish..
+still work in progress and the TODO list is longish..
 
-But my first contribution is to allow teh generation of slices through teh enclosure in order to be able to create fitting PCBs
+But my first contribution is to allow the generation of slices through the enclosure in order to be able to create fitting PCBs
+Note generation of the slices is Sloooow due to projection() but any half decent PC should be able to do it inside a minute.
 
 Enjoy!
 
