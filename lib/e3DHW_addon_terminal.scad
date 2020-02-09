@@ -129,6 +129,50 @@ module add_simpleMammut( n=undef, mmq=1, len=1, type = FT, x= 0, y=0, rot =norot
 }
 
 /**
+@fn add_WAGO_2624( n)
+creates allocatred space for a WAGO 2624.
+   @param n: number of poles.
+**/
+module add_WAGO_2624( n=undef){
+   assert (!is_undef(n), " the parameter n is required");
+   assert (n > 0, " number of elements (n) must be positive");
+
+//we checked this against a 4 pole cad model from WAGO
+//    translate([20,0,0])
+//        rotate([90,0,0])rotate([0,270,0])
+//            import("2624-1104.stl", convexity=3);
+        union(){
+            //wire inputs
+            translate([2.5,0,4.5])
+                rotate([90,0,0])
+                    for (a =[0:n-1]){
+                        translate([5*a,0,-10])
+                            cylinder($fn = 0, $fa = 12, $fs = 2,h=25,d=4.5,center=false);
+            }
+            
+            //front push points
+            translate([2.5,0,5.75])
+                rotate([90,0,0])
+                    translate([0,4,0])
+                        for (a =[0:n-1]){
+                            translate([5*a,0,-10])
+                                cylinder($fn = 0, $fa = 12, $fs = 2,h=25,d=3.5,center=false);
+            }
+            
+            //top push points
+            translate([3.75,6.25,0])
+                for (a =[0:n-1]){
+                    translate([5*a,0,0])
+                        cylinder($fn = 0, $fa = 12, $fs = 2,h=50,d=3,center=false);
+            }
+            
+            //device space
+            translate([0,-5.6,-4])
+                cube(size=[((n-1)*5)+6.5,16.3,19.4],center=false);
+        }//end union
+}
+
+/**
 @fn get_simpleMammutSize( mmq=1, type = FT)
 gets the real x dimension of a simpleMammut.
    @param mmq: max cable section in mmq.
