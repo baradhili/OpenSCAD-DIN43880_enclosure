@@ -1,5 +1,16 @@
-# e3DHW-make-DIY-electronics-hardware-like-a-professional
- 
+# DIN43880 enclosure and other DIN stuff
+
+This was forked from e3DHW-make-DIY-electronics-hardware-like-a-professional and re-arranged (a lot)
+to make it work better with git and to focus it on the generation of DIN43880 enclosures
+
+still work in progress and teh TODO list is longish..
+
+But my first contribution is to allow teh generation of slices through teh enclosure in order to be able to create fitting PCBs
+
+Enjoy!
+
+Bret
+
 The evolution of the electronics from the single components to the macro-sets (boards and shields)
 was positive, allowing the rapid prototyping of complex projects until a few years ago
 unimaginable, thus bringing new audiences of enthusiasts to electronics.
